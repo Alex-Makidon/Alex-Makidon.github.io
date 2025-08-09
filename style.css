@@ -64,3 +64,33 @@ footer {
     row-gap: 6px;
   }
 }
+/* ===== Mobile-specific fixes ===== */
+@media (max-width: 480px){
+
+  /* Keep name from overlapping */
+  .brand {
+    white-space: nowrap;
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  /* Tighter menu spacing + wrapping */
+  .menu {
+    font-size: 14px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  /* Adjust nav alignment */
+  .nav .container {
+    align-items: flex-start;
+    row-gap: 6px;
+  }
+
+  /* Fix Resume section scroll position on mobile */
+  #resume {
+    padding-top: 140px; /* match Contact section position */
+    margin-top: -140px; /* prevents visible gap in layout */
+  }
+
+}
