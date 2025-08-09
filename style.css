@@ -47,3 +47,20 @@ footer {
   background: #ddd;
   margin-top: 2rem;
 }
+
+@media (max-width: 480px){
+  .brand{
+    white-space: nowrap;      
+    font-size: 18px;         
+    line-height: 1.2;
+  }
+  .menu{
+    font-size: 14px;        
+    gap: 12px;
+    flex-wrap: wrap;        
+  }
+  .nav .container{
+    align-items: flex-start;  
+    row-gap: 6px;
+  }
+}
