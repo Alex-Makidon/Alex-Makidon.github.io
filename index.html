@@ -18,10 +18,21 @@
       }
       *{box-sizing:border-box}
       html,body{height:100%}
+      html{scroll-behavior:smooth;}
       body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
       a{color:var(--ink);text-decoration:none}
       a:hover{opacity:.9}
       .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+      /* ===== NAV ===== */
+      header.nav{position:fixed;inset-inline:0;top:0;z-index:50;background:linear-gradient(to bottom,rgba(14,14,16,.9),rgba(14,14,16,.4),transparent);backdrop-filter:saturate(140%) blur(8px)}
+      .nav .container{display:flex;justify-content:space-between;align-items:center;padding:14px 20px}
+      .brand{font-family:"Playfair Display",serif;font-size:20px;white-space:nowrap}
+      .menu{display:flex;gap:18px}
+      .menu a{color:var(--muted);font-weight:500}
+      .menu a:hover{color:var(--ink)}
+
+      /* ===== HERO ===== */
       .hero{position:relative;min-height:100svh;display:grid;grid-template-columns:1.1fr .9fr}
       .hero__media{position:relative}
       .hero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,14,16,.55),rgba(14,14,16,.25) 35%,rgba(14,14,16,0));pointer-events:none}
@@ -34,12 +45,8 @@
       .cta{display:flex;gap:14px;flex-wrap:wrap}
       .btn{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:12px 18px;border:1px solid rgba(255,255,255,.14);background:transparent;color:var(--ink);font-weight:600}
       .btn--primary{background:var(--accent);color:#111;border-color:transparent}
-      header.nav{position:fixed;inset-inline:0;top:0;z-index:50;background:linear-gradient(to bottom,rgba(14,14,16,.9),rgba(14,14,16,.4),transparent);backdrop-filter:saturate(140%) blur(8px)}
-      .nav .container{display:flex;justify-content:space-between;align-items:center;padding:14px 20px}
-      .brand{font-family:"Playfair Display",serif;font-size:20px}
-      .menu{display:flex;gap:18px}
-      .menu a{color:var(--muted);font-weight:500}
-      .menu a.active, .menu a:hover{color:var(--ink)}
+
+      /* ===== SECTIONS ===== */
       section{padding:72px 0}
       .section-title{font-family:"Playfair Display",serif;font-size:34px;margin:0 0 10px}
       .muted{color:var(--muted)}
@@ -50,50 +57,28 @@
       .chip{border:1px solid rgba(255,255,255,.14);padding:8px 12px;border-radius:999px;color:#eee;font-size:14px}
       .resume{display:flex;gap:20px;flex-wrap:wrap}
       .resume a{border:1px solid rgba(255,255,255,.14);padding:12px 16px;border-radius:12px}
-      footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.08)}
+
+      /* ===== Anchor offsets so fixed header doesn't hide titles ===== */
+      /* Place anchors where you want scroll to land */
+      #resume-anchor, #highlights-anchor { display:block; height:0; scroll-margin-top:120px; }
+      @media (max-width:480px){
+        #resume-anchor, #highlights-anchor { scroll-margin-top:180px; }
+      }
+
+      /* ===== RESPONSIVE ===== */
       @media (max-width:900px){
         .hero{grid-template-columns:1fr}
         .hero__media{height:55svh}
         .hero__inner{padding:28px}
         .menu{gap:12px}
-        @media (max-width: 480px){
-          @media (max-width: 480px) {
-            :where(#about, #skills, #highlights, #resume, #contact) {
-  scroll-margin-top: 90px;
+      }
+      @media (max-width:480px){
+        .nav .container{flex-direction:column;align-items:center;gap:8px}
+        .brand{display:block;text-align:center;font-size:18px;line-height:1.2;margin-bottom:4px}
+        .menu{justify-content:center;flex-wrap:wrap;gap:12px;font-size:14px}
+      }
 
-    #about, #skills, #highlights, #resume, #contact {
-  scroll-margin-top: 90px;
-}
-
-/* larger offset for mobile so the heading isn't hidden */
-@media (max-width: 480px){
-  #about, #skills, #highlights, #resume, #contact {
-    scroll-margin-top: 150px; /* bump up if needed */
-  }
-}              
-html { scroll-behavior: smooth; }           
-}          
-  .nav .container {
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .brand {
-    display: block;
-    text-align: center;
-    margin-bottom: 4px;
-  }
-
-  .menu {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-.brand{ white-space: nowrap; font-size: 18px; line-height: 1.2; }
-  .menu{ font-size: 14px; gap: 12px; flex-wrap: wrap; }
-  .nav .container{ align-items: flex-start; row-gap: 6px; }
-}     
+      footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.08)}
     </style>
   </head>
   <body>
@@ -103,16 +88,19 @@ html { scroll-behavior: smooth; }
         <nav class="menu">
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
-          <a href="#highlights">Highlights</a>          
-          <a href="#resume">Resume</a>
+          <a href="#highlights-anchor">Highlights</a>
+          <a href="#resume-anchor">Resume</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
     </header>
+
     <main>
+      <!-- HERO -->
       <section class="hero" aria-label="Hero">
         <div class="hero__media">
-          <img class="hero__img" src="hero.jpg" alt="Portrait of Alex in a tuxedo seated on a sofa" />        </div>
+          <img class="hero__img" src="hero.jpg" alt="Portrait of Alex in a tuxedo seated on a sofa" />
+        </div>
         <div class="hero__content">
           <div class="hero__inner">
             <span class="tag">IT Support • Technical Writing</span>
@@ -120,17 +108,21 @@ html { scroll-behavior: smooth; }
             <p class="lead">Service Desk Engineer with 8+ years supporting enterprise users, training teams, and turning complex tech into clear, user-friendly documentation.</p>
             <div class="cta">
               <a class="btn btn--primary" href="#contact">Get in touch</a>
-              <a class="btn" href="#resume">View résumé</a>
+              <a class="btn" href="#resume-anchor">View résumé</a>
             </div>
           </div>
         </div>
       </section>
+
+      <!-- ABOUT -->
       <section id="about">
         <div class="container">
           <h2 class="section-title">About</h2>
-          <p class="muted">I’m an IT professional who thrives on creating clean, efficient systems and clear communication. I take pride in solving complex technical issues and documenting solutions so teams can work more efficient.
+          <p class="muted">I’m an IT professional who thrives on creating clean, efficient systems and clear communication. I take pride in solving complex technical issues and documenting solutions so teams can work more efficiently.</p>
         </div>
       </section>
+
+      <!-- SKILLS -->
       <section id="skills">
         <div class="container">
           <h2 class="section-title">Skills</h2>
@@ -176,51 +168,59 @@ html { scroll-behavior: smooth; }
           </div>
         </div>
       </section>
-<section id="resume">
-  <section id="highlights">
-  <div class="container">
-    <h2 class="section-title">Highlights</h2>
 
-    <div class="grid cards">
-      <div class="card">
-        <h3>USLI • Service Desk Engineer</h3>
-        <ul>
-          <li>Primary support for ~2,000 employees across <strong>3 regional offices</strong>; resolved tickets across Windows & macOS.</li>
-          <li>Owned Microsoft 365 onboarding/offboarding (Azure AD, Exchange, Intune/Autopilot) with clear, reusable documentation.</li>
-          <li>Delivered new-hire IT overviews and security classes; coached interns and new team members.</li>
-          <li>Standardized Zoom/Teams room setups and meeting practices to reduce day-of-event issues.</li>
-          <li>Created and maintained a knowledge base so fixes are repeatable and scalable.</li>
-        </ul>
-      </div>
+      <!-- HIGHLIGHTS -->
+      <span id="highlights-anchor"></span>
+      <section id="highlights">
+        <div class="container">
+          <h2 class="section-title">Highlights</h2>
+          <div class="grid cards">
+            <div class="card">
+              <h3>USLI • Service Desk Engineer</h3>
+              <ul>
+                <li>Primary support for ~2,000 employees across <strong>3 regional offices</strong>; resolved tickets across Windows & macOS.</li>
+                <li>Owned Microsoft 365 onboarding/offboarding (Azure AD, Exchange, Intune/Autopilot) with clear, reusable documentation.</li>
+                <li>Delivered new-hire IT overviews and security classes; coached interns and new team members.</li>
+                <li>Standardized Zoom/Teams room setups and meeting practices to reduce day-of-event issues.</li>
+                <li>Created and maintained a knowledge base so fixes are repeatable and scalable.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Simpay • IT Support (solo)</h3>
+              <ul>
+                <li>One-person IT handling endpoints, accounts, networking basics, and vendor coordination.</li>
+                <li>Built processes and docs from scratch to stabilize day-to-day operations.</li>
+                <li>Reduced recurring tickets by documenting fixes and training users on common workflows.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <div class="card">
-        <h3>Simpay • IT Support (solo)</h3>
-        <ul>
-          <li>One-person IT handling endpoints, accounts, networking basics, and vendor coordination.</li>
-          <li>Built processes and docs from scratch to stabilize day-to-day operations.</li>
-          <li>Reduced recurring tickets by documenting fixes and training users on common workflows.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>  <div class="container">
-    <h2 class="section-title">Résumé</h2>
-    <p class="muted">Download my résumé or browse highlights below.</p>
-    <div class="resume">
-      <a href="Alex_Makidon_Resume.pdf" target="_blank" rel="noopener" download>Download PDF</a>
-      <a href="#highlights">USLI • Service Desk Engineer</a>
-      <a href="#highlights">Simpay • IT Support (solo)</a>
-    </div>
-  </div>
-</section>      
+      <!-- RESUME -->
+      <span id="resume-anchor"></span>
+      <section id="resume">
+        <div class="container">
+          <h2 class="section-title">Résumé</h2>
+          <p class="muted">Download my résumé or browse highlights above.</p>
+          <div class="resume">
+            <a href="Alex_Makidon_Resume.pdf" target="_blank" rel="noopener" download>Download PDF</a>
+            <a href="#highlights-anchor">USLI • Service Desk Engineer</a>
+            <a href="#highlights-anchor">Simpay • IT Support (solo)</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
       <section id="contact">
         <div class="container">
           <h2 class="section-title">Contact</h2>
           <p class="muted">Best way to reach me is email. I’m open to roles in IT support/enablement and technical writing.</p>
-          <p><a href="mailto:alex.makidon@gmail.com">alex.makidon@gmail.com</a> · <a href="https://www.linkedin.com/in/alex-makidon-951288140" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/alex-makidon" target="_blank" rel="noopener">GitHub</a></p>
+          <p><a href="mailto:alex.makidon@gmail.com">alex.makidon@gmail.com</a> · <a href="https://www.linkedin.com/in/alex-makidon-951288140/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/alex-makidon" target="_blank" rel="noopener">GitHub</a></p>
         </div>
       </section>
     </main>
+
     <footer>
       <div class="container">© <span id="y"></span> Alex Makidon</div>
     </footer>
