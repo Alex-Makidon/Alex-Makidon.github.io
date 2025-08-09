@@ -1,4 +1,4 @@
-
+/* Base */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -48,22 +48,26 @@ footer {
   margin-top: 2rem;
 }
 
-@media (max-width: 480px){
-  .brand{
-    white-space: nowrap;      
-    font-size: 18px;         
-    line-height: 1.2;
-  }
-  .menu{
-    font-size: 14px;        
-    gap: 12px;
-    flex-wrap: wrap;        
-  }
-  .nav .container{
-    align-items: flex-start;  
-    row-gap: 6px;
-  }
+/* Smooth scroll for nicer anchor jumps */
+html { scroll-behavior: smooth; }
+
+/* ===== Anchor offset to avoid fixed header covering titles ===== */
+/* Desktop default */
+#resume::before {
+  content: "";
+  display: block;
+  height: 120px;   /* adjust if your header is taller/shorter on desktop */
+  margin-top: -120px;
 }
+
+/* (Optional) If Highlights also lands too high on click, keep this; otherwise you can delete */
+#highlights::before {
+  content: "";
+  display: block;
+  height: 120px;
+  margin-top: -120px;
+}
+
 /* ===== Mobile-specific fixes ===== */
 @media (max-width: 480px){
 
@@ -87,10 +91,15 @@ footer {
     row-gap: 6px;
   }
 
-  /* Fix Resume section scroll position on mobile */
-  #resume {
-    padding-top: 140px; /* match Contact section position */
-    margin-top: -140px; /* prevents visible gap in layout */
+  /* Bigger anchor offset on mobile (taller header) */
+  #resume::before {
+    height: 170px;   /* tweak until it matches where Contact lands */
+    margin-top: -170px;
   }
 
+  /* (Optional) Match Highlights too */
+  #highlights::before {
+    height: 170px;
+    margin-top: -170px;
+  }
 }
