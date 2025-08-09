@@ -60,6 +60,17 @@
           @media (max-width: 480px) {
             :where(#about, #skills, #highlights, #resume, #contact) {
   scroll-margin-top: 90px;
+
+    #about, #skills, #highlights, #resume, #contact {
+  scroll-margin-top: 90px;
+}
+
+/* larger offset for mobile so the heading isn't hidden */
+@media (max-width: 480px){
+  #about, #skills, #highlights, #resume, #contact {
+    scroll-margin-top: 150px; /* bump up if needed */
+  }
+}              
 html { scroll-behavior: smooth; }           
 }          
   .nav .container {
