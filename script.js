@@ -16,3 +16,12 @@ const io = new IntersectionObserver((entries)=>{
   entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
 },{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// Stagger in skill chips
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.skills').forEach(group => {
+    const chips = [...group.querySelectorAll('.chip')];
+    chips.forEach((chip, i) => {
+      setTimeout(() => chip.classList.add('show'), 80 * i);
+    });
+  });
+});
