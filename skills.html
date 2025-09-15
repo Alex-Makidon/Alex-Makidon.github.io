@@ -1,15 +1,88 @@
-<!doctype html><html lang="en"><head><title>Skills</title>
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Skills — Alex Makidon</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="IT Systems Engineer with 8+ years experience. Microsoft 365, Intune, Autopilot, and Active Directory.">
+  <meta name="description" content="Core technical skills, tools, and collaboration strengths.">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="assets/favicon.ico">
   <script defer src="script.js"></script>
 </head>
 <body>
-  <header class="nav"><div class="container"><div class="brand">Alex Makidon</div>
-    <nav class="menu">
-      <a href="/">Home</a><a href="/about.html">About</a><a href="/skills.html">Skills</a>
-      <a href="/portfolio.html">Portfolio</a><a href="/resume.html">Résumé</a><a href="/contact.html">Contact</a>
-    </nav></div></header>
-<main><h1>Skills</h1><ul><li>Microsoft 365</li><li>Intune/Autopilot</li><li>PowerShell</li></ul></main></body></html>
+  <header class="nav">
+    <div class="container">
+      <div class="brand">Alex Makidon</div>
+      <nav class="menu">
+        <a href="/">Home</a><a href="/about.html">About</a><a href="/skills.html">Skills</a>
+        <a href="/portfolio.html">Portfolio</a><a href="/resume.html">Résumé</a><a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section>
+      <div class="container">
+        <h1 class="section-title reveal">Skills</h1>
+
+        <div class="grid cards">
+          <div class="card reveal">
+            <h3>IT Support & Endpoint Management</h3>
+            <div class="skills">
+              <span class="chip">Intune</span><span class="chip">Autopilot</span>
+              <span class="chip">Active Directory</span><span class="chip">Azure AD</span>
+              <span class="chip">Endpoint Configuration Manager</span>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <h3>Cloud & SaaS Platforms</h3>
+            <div class="skills">
+              <span class="chip">Microsoft 365</span><span class="chip">Exchange Online</span>
+              <span class="chip">Teams</span><span class="chip">SharePoint</span>
+              <span class="chip">Google Workspace</span><span class="chip">Zoom</span><span class="chip">Slack</span>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <h3>Programming & Scripting</h3>
+            <div class="skills">
+              <span class="chip">PowerShell</span><span class="chip">Windows CMD</span>
+              <span class="chip">HTML</span><span class="chip">JavaScript</span>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <h3>Troubleshooting</h3>
+            <div class="skills">
+              <span class="chip">Event Logs</span><span class="chip">Performance Traces</span>
+              <span class="chip">Root Cause Analysis</span><span class="chip">Incident & Problem Mgmt</span>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <h3>Process Improvement</h3>
+            <div class="skills">
+              <span class="chip">Automation</span><span class="chip">Documentation</span>
+              <span class="chip">Self-Service</span><span class="chip">IT Orientation</span>
+              <span class="chip">Technical Writing</span>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <h3>Collaboration</h3>
+            <div class="skills">
+              <span class="chip">Security</span><span class="chip">Infrastructure</span>
+              <span class="chip">Unified Communications</span><span class="chip">Escalation Management</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container">© <span id="y"></span> Alex Makidon</div></footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
