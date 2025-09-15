@@ -148,3 +148,39 @@ footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.
 .btn:active {
   transform: scale(0.97); /* pressed-down look */
 }
+/* Hero layout lives inside a container now */
+.hero > .container {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: stretch;
+}
+
+/* Add clean vertical rhythm in the text stack */
+.hero__inner {
+  padding: 64px 0;                /* no side padding; container handles it */
+  display: flex;
+  flex-direction: column;
+  gap: 14px;                      /* <— consistent spacing between tag, h1, lead, buttons */
+}
+
+/* Give extra breathing room under the tag */
+.tag { margin-bottom: 6px; }
+
+/* Improve photo crop: show more of the face; tweak numbers to taste */
+.hero__img {
+  object-fit: cover;
+  object-position: 30% center;    /* shift focal point to the left  (0% = far left, 100% = far right) */
+  filter: none;
+}
+
+/* On very wide screens, nudge the focal point a bit more */
+@media (min-width: 1200px){
+  .hero__img { object-position: 25% center; }
+}
+
+/* Responsive: stack and keep generous spacing on small screens */
+@media (max-width: 900px){
+  .hero > .container { grid-template-columns: 1fr; }
+  .hero__media { height: 55svh; }
+  .hero__inner { padding: 28px 0; gap: 12px; }
+}
