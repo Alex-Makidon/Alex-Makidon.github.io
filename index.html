@@ -4,16 +4,22 @@
   <title>Alex Makidon — IT Systems Engineer</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="IT Systems Engineer with 8+ years experience. Microsoft 365, Intune, Autopilot, and Active Directory.">
+  <meta name="description" content="IT Systems Engineer building fast, secure websites and reliable IT systems for small businesses.">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="assets/favicon.ico">
   <script defer src="script.js"></script>
+
+  <!-- Optional social preview -->
+  <meta property="og:title" content="Alex Makidon — IT Systems Engineer">
+  <meta property="og:description" content="Web design & development, IT systems setup, and dependable support for small businesses.">
+  <meta property="og:image" content="https://alex-makidon.github.io/assets/social-preview.png">
+  <meta property="og:type" content="website">
 </head>
 <body>
+  <!-- Header (home only: name clicks to call) -->
   <header class="nav">
     <div class="container">
       <div class="brand">
-        <!-- Home only: click name to call (remove on other pages) -->
         <a href="tel:16103082536">Alex Makidon</a>
       </div>
       <nav class="menu">
@@ -29,16 +35,18 @@
   </header>
 
   <main id="main">
-    <!-- Hero -->
+    <!-- HERO -->
     <section class="hero" aria-label="Hero">
       <div class="hero__media">
         <img class="hero__img" src="assets/hero.jpg" alt="Portrait of Alex in a suit">
       </div>
       <div class="hero__content">
         <div class="hero__inner">
-          <span class="tag reveal" data-reveal>IT Systems • Technical Writing</span>
+          <span class="tag reveal" data-reveal>IT Systems • Technical Writing • Web Design & Development</span>
           <h1 class="slide-in">Hi, I’m Alex — I build smooth, reliable IT experiences.</h1>
-          <p class="lead reveal" data-reveal>IT Systems Engineer with 8+ years supporting enterprise users, training teams, and creating scalable documentation.</p>
+          <p class="lead reveal" data-reveal>
+            I help small businesses with fast, secure websites and the day-to-day systems your team relies on—so work just flows.
+          </p>
           <div class="cta reveal" data-reveal>
             <a class="btn btn--primary" href="/contact.html">Get in touch</a>
             <a class="btn" href="/resume.html">View résumé</a>
@@ -47,22 +55,26 @@
       </div>
     </section>
 
-    <!-- Services teaser -->
+    <!-- SERVICES TEASER -->
     <section>
       <div class="container">
         <h2 class="section-title reveal">Services</h2>
         <div class="grid cards">
           <div class="card reveal">
-            <h3>Business Websites</h3>
-            <p>Fast, secure, and SEO-ready sites that look great on every device.</p>
+            <h3>Web Design & Development</h3>
+            <p>Modern, responsive sites with clear navigation, fast loads, and on-brand visuals.</p>
           </div>
           <div class="card reveal">
-            <h3>Brand Refresh</h3>
-            <p>Clean typography, color systems, and visuals that build trust.</p>
+            <h3>IT Systems Setup</h3>
+            <p>Microsoft 365 / Google Workspace, device provisioning (PCs & Macs), security basics.</p>
           </div>
           <div class="card reveal">
             <h3>Maintenance & Support</h3>
-            <p>Updates, analytics, and performance passes as you grow.</p>
+            <p>Content updates, analytics insight, performance & accessibility passes.</p>
+          </div>
+          <div class="card reveal">
+            <h3>Technical Writing</h3>
+            <p>Clear documentation and how-to guides that make processes repeatable.</p>
           </div>
         </div>
         <p class="reveal" style="margin-top:18px">
@@ -70,9 +82,37 @@
         </p>
       </div>
     </section>
+
+    <!-- FEATURED WORK -->
+    <section>
+      <div class="container">
+        <h2 class="section-title reveal">Featured work</h2>
+        <div class="grid cards">
+          <div class="card reveal">
+            <h3>LivMarkins Insurance</h3>
+            <p><strong>Outcome:</strong> Clear, trustworthy presence; streamlined quote requests.</p>
+            <p><a class="btn" href="https://livmarkins.com" target="_blank" rel="noopener">Visit site</a>
+               <a class="btn" href="/portfolio.html">Project details →</a></p>
+          </div>
+          <div class="card reveal">
+            <h3>Mobile Impact Automotive</h3>
+            <p><strong>Outcome:</strong> Modernized brand and mobile UX; reduced bounce on mobile.</p>
+            <p><a class="btn" href="https://mobileimpactautomotive.com" target="_blank" rel="noopener">Visit site</a>
+               <a class="btn" href="/portfolio.html">Project details →</a></p>
+          </div>
+          <div class="card reveal">
+            <h3>alex-makidon.github.io</h3>
+            <p><strong>Outcome:</strong> Central hub for client work and IT capabilities with fast loads and clean UX.</p>
+            <p><a class="btn" href="/portfolio.html">See more work →</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer><div class="container">© <span id="y"></span> Alex Makidon</div></footer>
+  <footer>
+    <div class="container">© <span id="y"></span> Alex Makidon</div>
+  </footer>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
