@@ -1,4 +1,7 @@
-<!doctype html><html lang="en"><head><title>Alex Makidon</title>
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Alex Makidon — IT Systems Engineer</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="description" content="IT Systems Engineer with 8+ years experience. Microsoft 365, Intune, Autopilot, and Active Directory.">
@@ -7,11 +10,40 @@
   <script defer src="script.js"></script>
 </head>
 <body>
-  <header class="nav"><div class="container"><div class="brand">Alex Makidon</div>
-    <nav class="menu">
-      <a href="/">Home</a><a href="/about.html">About</a><a href="/skills.html">Skills</a>
-      <a href="/portfolio.html">Portfolio</a><a href="/resume.html">Résumé</a><a href="/contact.html">Contact</a>
-    </nav></div></header>
-<main><h1>Hi, I’m Alex — IT Systems Engineer</h1></main>
-<footer>© <span id="y"></span> Alex Makidon</footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script></body></html>
+  <header class="nav">
+    <div class="container">
+      <div class="brand">Alex Makidon</div>
+      <nav class="menu">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/skills.html">Skills</a>
+        <a href="/portfolio.html">Portfolio</a>
+        <a href="/resume.html">Résumé</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero__media">
+        <img class="hero__img" src="assets/hero.jpg" alt="Portrait of Alex in a suit">
+      </div>
+      <div class="hero__content">
+        <div class="hero__inner">
+          <span class="tag reveal" data-reveal>IT Systems • Technical Writing</span>
+          <h1 class="slide-in">Hi, I’m Alex — I build smooth, reliable IT experiences.</h1>
+          <p class="lead reveal" data-reveal>IT Systems Engineer with 8+ years supporting enterprise users, training teams, and creating scalable documentation.</p>
+          <div class="cta reveal" data-reveal>
+            <a class="btn btn--primary" href="/contact.html">Get in touch</a>
+            <a class="btn" href="/resume.html">View résumé</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container">© <span id="y"></span> Alex Makidon</div></footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
