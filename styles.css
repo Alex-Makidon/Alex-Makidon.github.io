@@ -15,9 +15,10 @@ header.nav{position:sticky;top:0;z-index:50;
   background:linear-gradient(to bottom,rgba(14,14,16,.9),rgba(14,14,16,.4),transparent);
   backdrop-filter:saturate(140%) blur(8px)}
 .nav .container{display:flex;justify-content:space-between;align-items:center;padding:14px 20px}
-.brand{font-family:"Playfair Display",serif;font-size:20px;white-space:nowrap}
+.brand{font-family:"Playfair Display",serif;
+       font-size:26px;white-space:nowrap}
 .menu{display:flex;gap:18px}
-.menu a{color:var(--muted);font-weight:500}
+.menu a{color:var(--muted);font-weight:600}
 .menu a[aria-current="page"]{color:var(--ink);}
 
 /* ===== Hero ===== */
