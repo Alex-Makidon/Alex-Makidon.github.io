@@ -1,15 +1,55 @@
-<!doctype html><html lang="en"><head><title>Portfolio</title>
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Portfolio — Alex Makidon</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="IT Systems Engineer with 8+ years experience. Microsoft 365, Intune, Autopilot, and Active Directory.">
+  <meta name="description" content="Recent websites and how-to guides by Alex Makidon.">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="assets/favicon.ico">
   <script defer src="script.js"></script>
 </head>
 <body>
-  <header class="nav"><div class="container"><div class="brand">Alex Makidon</div>
-    <nav class="menu">
-      <a href="/">Home</a><a href="/about.html">About</a><a href="/skills.html">Skills</a>
-      <a href="/portfolio.html">Portfolio</a><a href="/resume.html">Résumé</a><a href="/contact.html">Contact</a>
-    </nav></div></header>
-<main><h1>Portfolio</h1><ul><li>Mobile Impact Automotive</li><li>LivMarkins Insurance</li></ul></main></body></html>
+  <header class="nav">
+    <div class="container">
+      <div class="brand">Alex Makidon</div>
+      <nav class="menu">
+        <a href="/">Home</a><a href="/about.html">About</a><a href="/skills.html">Skills</a>
+        <a href="/portfolio.html">Portfolio</a><a href="/resume.html">Résumé</a><a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section>
+      <div class="container">
+        <h1 class="section-title reveal">Portfolio</h1>
+
+        <div class="grid cards">
+          <div class="card reveal">
+            <h3>Mobile Impact Automotive</h3>
+            <p>Responsive business website with branding, forms, and domain setup.</p>
+            <p><a class="btn" href="https://mobileimpactautomotive.com" target="_blank" rel="noopener">Visit site</a></p>
+          </div>
+
+          <div class="card reveal">
+            <h3>LivMarkins Insurance</h3>
+            <p>Multi-page static site with custom forms and GitHub Pages hosting.</p>
+            <p><a class="btn" href="https://livmarkins.com" target="_blank" rel="noopener">Visit site</a></p>
+          </div>
+
+          <div class="card reveal">
+            <h3>Portfolio Website</h3>
+            <p>alex-makidon.github.io — IT projects, automation resources, and AI tooling.</p>
+            <p><a class="btn" href="https://alex-makidon.github.io" target="_blank" rel="noopener">Visit site</a></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container">© <span id="y"></span> Alex Makidon</div></footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
