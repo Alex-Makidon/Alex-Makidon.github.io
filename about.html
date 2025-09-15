@@ -1,15 +1,36 @@
-<!doctype html><html lang="en"><head><title>About</title>
+<!doctype html>
+<html lang="en">
+<head>
+  <title>About — Alex Makidon</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="IT Systems Engineer with 8+ years experience. Microsoft 365, Intune, Autopilot, and Active Directory.">
+  <meta name="description" content="About Alex Makidon — IT Systems Engineer based in Denver, CO.">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="assets/favicon.ico">
   <script defer src="script.js"></script>
 </head>
 <body>
-  <header class="nav"><div class="container"><div class="brand">Alex Makidon</div>
-    <nav class="menu">
-      <a href="/">Home</a><a href="/about.html">About</a><a href="/skills.html">Skills</a>
-      <a href="/portfolio.html">Portfolio</a><a href="/resume.html">Résumé</a><a href="/contact.html">Contact</a>
-    </nav></div></header>
-<main><h1>About</h1><p>IT Systems Engineer in Denver, CO</p></main></body></html>
+  <header class="nav">
+    <div class="container">
+      <div class="brand">Alex Makidon</div>
+      <nav class="menu">
+        <a href="/">Home</a><a href="/about.html">About</a><a href="/skills.html">Skills</a>
+        <a href="/portfolio.html">Portfolio</a><a href="/resume.html">Résumé</a><a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section>
+      <div class="container">
+        <h1 class="section-title reveal">About</h1>
+        <p class="muted reveal">I’m an <strong>IT Systems Engineer</strong> who thrives on creating clean, efficient systems and clear communication. Proven record in enterprise IT support, documentation, and automation.</p>
+        <p class="reveal">Toolkit: Microsoft 365, Intune/Autopilot, macOS & Windows support, AD/Azure AD, Zoom/Teams room setups, and pragmatic PowerShell. I love turning tribal knowledge into repeatable processes.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container">© <span id="y"></span> Alex Makidon</div></footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
