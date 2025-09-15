@@ -15,7 +15,16 @@ header.nav{position:sticky;top:0;z-index:50;
   background:linear-gradient(to bottom,rgba(14,14,16,.9),rgba(14,14,16,.4),transparent);
   backdrop-filter:saturate(140%) blur(8px)}
 .nav .container{display:flex;justify-content:space-between;align-items:center;padding:14px 20px}
+/* Gold accent for Home page brand link */
+.brand a {
+  color: var(--accent);     /* gold */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 
+.brand a:hover {
+  color: #fff;              /* turns white on hover */
+}
 /* Brand (name) */
 .brand {
   font-family: "Playfair Display", serif;
