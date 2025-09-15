@@ -184,3 +184,48 @@ footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.
   .hero__media { height: 55svh; }
   .hero__inner { padding: 28px 0; gap: 12px; }
 }
+/* ===== Hero floating icons (desktop only) ===== */
+.hero { position: relative; }
+.hero-art {
+  position: absolute;
+  pointer-events: none;
+  /* confine to right half of hero so they don't overlap the photo */
+  top: 6%;
+  bottom: 8%;
+  left: 55%;
+  right: 4%;
+}
+
+.ico {
+  position: absolute;
+  width: 64px; height: 64px;
+  fill: none;
+  stroke: rgba(242,242,242,.38);
+  stroke-width: 2;
+  opacity: .8;
+  filter: drop-shadow(0 0 10px rgba(212,175,55,.15));
+  animation: floatY 7s ease-in-out infinite;
+}
+.ico.gold { stroke: var(--accent); opacity: .9; }
+
+/* place each icon */
+.i1 { top: 6%;  left: 6%;  animation-duration: 7.5s; }
+.i2 { top: 26%; left: 42%; animation-duration: 6.5s; } /* gold cloud */
+.i3 { top: 48%; left: 18%; animation-duration: 8s;   }
+.i4 { top: 10%; left: 70%; animation-duration: 7s;   }
+.i5 { top: 66%; left: 58%; animation-duration: 6.8s; }
+
+@keyframes floatY {
+  0%,100% { transform: translateY(0) }
+  50%     { transform: translateY(-8px) }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ico { animation: none; }
+}
+
+/* Hide the icons on tablets/phones (keep your perfect mobile hero) */
+@media (max-width: 900px){
+  .hero-art { display: none; }
+}
