@@ -1,15 +1,63 @@
-<!doctype html><html lang="en"><head><title>Résumé</title>
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Résumé — Alex Makidon</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="IT Systems Engineer with 8+ years experience. Microsoft 365, Intune, Autopilot, and Active Directory.">
+  <meta name="description" content="Résumé and certifications for Alex Makidon, IT Systems Engineer.">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="assets/favicon.ico">
   <script defer src="script.js"></script>
 </head>
 <body>
-  <header class="nav"><div class="container"><div class="brand">Alex Makidon</div>
-    <nav class="menu">
-      <a href="/">Home</a><a href="/about.html">About</a><a href="/skills.html">Skills</a>
-      <a href="/portfolio.html">Portfolio</a><a href="/resume.html">Résumé</a><a href="/contact.html">Contact</a>
-    </nav></div></header>
-<main><h1>Résumé</h1><p>Download my résumé: <a href="assets/Alex_Makidon_Resume.pdf">PDF</a></p></main></body></html>
+  <header class="nav">
+    <div class="container">
+      <div class="brand">Alex Makidon</div>
+      <nav class="menu">
+        <a href="/">Home</a><a href="/about.html">About</a><a href="/skills.html">Skills</a>
+        <a href="/portfolio.html">Portfolio</a><a href="/resume.html">Résumé</a><a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section>
+      <div class="container">
+        <h1 class="section-title reveal">Résumé</h1>
+        <p class="reveal"><a class="btn" href="assets/Alex_Makidon_Resume.pdf" download>Download PDF</a></p>
+
+        <h2 class="section-title reveal">Certifications</h2>
+        <ul class="reveal">
+          <li>Microsoft 365 Certified: Fundamentals (MS-900)</li>
+          <li>Google IT Support Certificate</li>
+          <li>CompTIA A+</li>
+        </ul>
+
+        <h2 class="section-title reveal">Recent Roles</h2>
+        <div class="grid cards">
+          <div class="card reveal">
+            <h3>USLI • IT Systems Engineer</h3>
+            <ul>
+              <li>Support for ~2,000 employees across 3 regional offices (Windows & macOS).</li>
+              <li>Microsoft 365 onboarding/offboarding; Intune/Autopilot; AD/Azure AD.</li>
+              <li>New-hire IT overviews; security & best-practices sessions.</li>
+              <li><strong>Key:</strong> Reduced recurring mailbox profile tickets by 40% via PowerShell automation.</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <h3>Simpay • IT Support (solo)</h3>
+            <ul>
+              <li>One-person IT for endpoints, accounts, vendors, and basic networking.</li>
+              <li>Introduced ticket tracking & documentation, improving resolution time.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container">© <span id="y"></span> Alex Makidon</div></footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
