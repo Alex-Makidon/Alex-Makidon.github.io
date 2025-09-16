@@ -6,8 +6,6 @@
   --accent: #d4af37;
   --card: #151519;
   --max: 1100px;
-
-  /* nav + rhythm */
   --nav-h: 64px;
 }
 
@@ -24,7 +22,7 @@ a { color: var(--ink); text-decoration: none; transition: color .3s ease; }
 a:hover { color: var(--accent); }
 .container { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
 
-/* ===== NAV (sticky to avoid mobile cut-off) ===== */
+/* ===== NAV (sticky so content isn’t cut off on mobile) ===== */
 header.nav {
   position: sticky;
   top: 0;
@@ -57,20 +55,23 @@ main > *:first-child { scroll-margin-top: calc(var(--nav-h) + env(safe-area-inse
 /* ===== HERO ===== */
 .hero {
   position: relative;
-  min-height: 100svh; /* full-height hero with small-viewport units (iOS-safe) */
+  min-height: 100svh;           /* full-height hero */
+  padding: 0;                   /* remove global section padding (fixes big gap) */
 }
 
-/* Make the container the grid so text stays anchored to the right */
 .hero > .container {
-  min-height: inherit;
+  min-height: inherit;          /* take the hero's height */
   display: grid;
-  grid-template-columns: 1.1fr .9fr; /* image | text */
-  align-items: center;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;          /* vertically center text block */
   gap: clamp(20px, 4vw, 56px);
 }
 
-/* Image column anchored left */
-.hero__media { position: relative; }
+/* ensure the media box has height so the absolutely-positioned img can fill it */
+.hero__media {
+  position: relative;
+  min-height: 60svh;            /* tweak to taste */
+}
 .hero__media::after {
   content: "";
   position: absolute;
@@ -78,8 +79,6 @@ main > *:first-child { scroll-margin-top: calc(var(--nav-h) + env(safe-area-inse
   background: linear-gradient(90deg, rgba(14,14,16,.55), rgba(14,14,16,.25) 35%, rgba(14,14,16,0));
   pointer-events: none;
 }
-/* Give the media box height so the absolutely-positioned img can fill it */
-.hero__media { min-height: 60svh; }
 
 .hero__img {
   position: absolute;
@@ -90,14 +89,17 @@ main > *:first-child { scroll-margin-top: calc(var(--nav-h) + env(safe-area-inse
   object-position: center top;
 }
 
-/* Text column anchored right */
+/* Desktop: text hugs right (keep your look) */
 .hero__content {
   display: flex;
   align-items: center;
-  justify-content: flex-end;  /* push text block right */
+  justify-content: flex-end;
   padding-right: 6%;
 }
-.hero__inner { max-width: 520px; padding: 64px 0; }
+.hero__inner {
+  max-width: 520px;
+  padding: 64px 0;              /* breathing room inside hero */
+}
 
 /* Type & chips */
 h1 {
@@ -114,7 +116,7 @@ h1 {
   font-size: 14px;
   color: var(--muted);
   backdrop-filter: blur(6px);
-  margin-bottom: 14px;
+  margin-bottom: 14px; /* spacing from heading */
 }
 .lead {
   font-size: clamp(16px, 1.6vw, 20px);
@@ -149,7 +151,9 @@ h1 {
 }
 
 /* ===== SECTIONS ===== */
-section { padding: 72px 0; }
+section { padding: 72px 0; }     /* global spacing … */
+section.hero { padding: 0; }     /* …but NOT the hero (double-safety) */
+
 .section-title {
   font-family: "Playfair Display", serif;
   font-size: 34px;
@@ -186,13 +190,10 @@ section { padding: 72px 0; }
 }
 
 /* ===== Responsive ===== */
-
-/* Tighten columns before stacking to avoid overlap in “small desktop” windows */
 @media (max-width: 1200px) {
   .hero > .container { grid-template-columns: 1fr 1fr; }
 }
 
-/* Stack on narrow; center text; keep good image height */
 @media (max-width: 900px) {
   .hero > .container { grid-template-columns: 1fr; min-height: auto; }
   .hero__media { min-height: 55svh; }
@@ -201,22 +202,6 @@ section { padding: 72px 0; }
   .menu { gap: 12px; }
 }
 
-/* Optional backup: overlay text on image when narrow
-   (only applies if you add class="hero hero--overlay-on-narrow" to the section) */
-@media (max-width: 900px) {
-  .hero.hero--overlay-on-narrow .hero__content {
-    position: absolute;
-    inset: auto 20px clamp(18px, 8vw, 36px) 20px;
-    background: rgba(12,12,12,.68);
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-    padding: clamp(12px, 3vw, 18px) clamp(14px, 3.5vw, 22px);
-    border-radius: 14px;
-    box-shadow: 0 8px 24px rgba(0,0,0,.35);
-  }
-}
-
-/* Phone nav tweaks */
 @media (max-width: 480px) {
   .nav .container { flex-direction: column; align-items: center; gap: 8px; }
   .brand { font-size: 18px; line-height: 1.2; margin-bottom: 4px; }
